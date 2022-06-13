@@ -16,10 +16,9 @@ spec:
     spec:
       containers:
         - name: server
-          image: mrbarker/python-flask-hello:latest
+          image: gnm3000/python-flask-hello:4b13c56b736051fd1f523c7776e96fc094cda233
           ports:
             - containerPort: 8080
-
 ---
 apiVersion: v1
 kind: Service
@@ -32,3 +31,7 @@ spec:
   ports:
     - port: 8080
       nodePort: 30036
+  template:
+    spec:
+      containers:
+        - image: gnm3000/python-flask-hello:4b13c56b736051fd1f523c7776e96fc094cda233
