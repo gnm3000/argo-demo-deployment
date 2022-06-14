@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/gnm3000/argo-demo-deployment.git
     targetRevision: HEAD
     path: dev
+    directory:
+      recursive: true
   destination:
     server: https://kubernetes.default.svc
     namespace: myapp
@@ -17,6 +19,6 @@ spec:
     syncOptions:
       - CreateNamespace
 
-    automate:
+    automated:
       selfHeal: true
       prune: true
