@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mongo-client
-  name: mongo-client
+    app: mongo-client-prod
+  name: mongo-client-prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongo-client
+      app: mongo-client-prod
   template:
     metadata:
       labels:
-        app: mongo-client
+        app: mongo-client-prod
     spec:
       containers:
       - image: mongo
-        name: mongo-client
+        name: mongo-client-prod
         env:
-        - name: mongo-client_INITDB_ROOT_USERNAME
+        - name: mongo-client-prod_INITDB_ROOT_USERNAME
           value: 'dummy'
-        - name: mongo-client_INITDB_ROOT_PASSWORD
+        - name: mongo-client-prod_INITDB_ROOT_PASSWORD
           value: 'dummy'

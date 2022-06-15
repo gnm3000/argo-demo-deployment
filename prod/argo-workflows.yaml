@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server-deployment
+  name: server-deployment-prod
   labels:
-    app: server
+    app: server-prod
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: server
+      app: server-prod
   template:
     metadata:
       labels:
-        app: server
+        app: server-prod
     spec:
       containers:
-        - name: server
+        - name: server-prod
           image: gnm3000/python-flask-hello-prod:latest
           ports:
             - containerPort: 8081
