@@ -9,7 +9,7 @@ spec:
   - port: 27017
     protocol: TCP
     targetPort: 27017
-    nodePort: 30001
+    nodePort: 30037
   selector:
     app: mongo-prod
   type: NodePort
