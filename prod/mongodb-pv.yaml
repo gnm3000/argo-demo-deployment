@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mongo-data-pv
+  name: mongo-data-pv-prod
 spec:
   accessModes:
     - ReadWriteOnce
   capacity:
     storage: 1Gi
   hostPath:
-    path: /data/mongo
+    path: /data/mongo-prod
