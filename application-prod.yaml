@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/gnm3000/argo-demo-deployment.git
+    targetRevision: HEAD
+    path: prod
+    directory:
+      recursive: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: myapp-prod
+
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace
+
+    automated:
+      selfHeal: true
+      prune: true
