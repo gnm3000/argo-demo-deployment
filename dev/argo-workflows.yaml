@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: server
-          image: gnm3000/python-flask-hello:92dfdaa84884a0ff7801d52ddec68864d32c16b1
+          image: gnm3000/python-flask-hello:3ff7e5c3b9695eb83154bc9a6b91ce8312a8d40e
           ports:
             - containerPort: 8081
